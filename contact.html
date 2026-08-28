@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carte de visite numérique</title>
+
+    <meta
+        name="description"
+        content="Carte de visite numérique de Modson Tande et Guinwogbegno Koffi"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #eef1f5;
+            --card: #ffffff;
+            --text: #111827;
+            --muted: #6b7280;
+            --line: #e5e7eb;
+            --dark: #111827;
+            --accent: #2563eb;
+            --whatsapp: #25d366;
+            --linkedin: #0a66c2;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 25px 15px 50px;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            color: #374151;
+        }
+
+        .brand-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .header p {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* =========================
+           BUSINESS CARD
+        ========================= */
+
+        .business-card {
+            background: var(--card);
+
+            border-radius: 24px;
+
+            margin-bottom: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 45px rgba(15, 23, 42, 0.08);
+
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        /* TOP */
+
+        .card-top {
+            height: 105px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #111827,
+                    #1f2937
+                );
+
+            position: relative;
+        }
+
+        .card-top::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 50%;
+
+            right: -70px;
+            top: -70px;
+        }
+
+        .card-number {
+            position: absolute;
+
+            top: 20px;
+            right: 20px;
+
+            color: rgba(255,255,255,0.55);
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+        /* PROFILE */
+
+        .profile-section {
+            text-align: center;
+
+            padding:
+                0 25px
+                28px;
+        }
+
+        .photo-wrapper {
+            margin-top: -55px;
+
+            position: relative;
+
+            display: inline-block;
+        }
+
+        .photo {
+            width: 110px;
+            height: 110px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            background: white;
+
+            border: 5px solid white;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .name {
+            margin-top: 15px;
+
+            font-size: 24px;
+            font-weight: 800;
+
+            letter-spacing: -0.7px;
+        }
+
+        .job {
+            margin-top: 8px;
+
+            color: var(--accent);
+
+            font-size: 12px;
+            font-weight: 700;
+
+            line-height: 1.6;
+        }
+
+        .bio {
+            margin: 15px auto 0;
+
+            max-width: 390px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-section {
+            border-top: 1px solid var(--line);
+
+            padding: 20px;
+        }
+
+        .phone {
+            text-align: center;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            color: #374151;
+
+            margin-bottom: 16px;
+        }
+
+        /* ACTION BUTTONS */
+
+        .actions {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 9px;
+        }
+
+        .action {
+            min-height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 7px;
+
+            border-radius: 11px;
+
+            border: 1px solid var(--line);
+
+            background: #f9fafb;
+
+            color: var(--text);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            transition: 0.25s ease;
+        }
+
+        .action:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .action.call:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .action.whatsapp:hover {
+            border-color: var(--whatsapp);
+            color: #159447;
+        }
+
+        .action.linkedin:hover {
+            border-color: var(--linkedin);
+            color: var(--linkedin);
+        }
+
+        .save-contact {
+            grid-column: span 2;
+
+            background: var(--dark);
+
+            color: white;
+
+            border-color: var(--dark);
+        }
+
+        .save-contact:hover {
+            background: #1f2937;
+            color: white;
+        }
+
+        /* =========================
+           SEPARATOR
+        ========================= */
+
+        .separator {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 30px 0;
+
+            color: #9ca3af;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            font-weight: 600;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background: #dfe3e8;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            text-align: center;
+
+            color: #9ca3af;
+
+            font-size: 10px;
+
+            line-height: 1.6;
+
+            margin-top: 30px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 360px) {
+
+            body {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .name {
+                font-size: 21px;
+            }
+
+            .job {
+                font-size: 11px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <span class="brand-dot"></span>
+
+            Carte de visite numérique
+
+        </div>
+
+        <p>
+            Scannez • Découvrez • Contactez
+        </p>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MODSON TANDE
+    ====================================================== -->
+
+    <article class="business-card">
+
+        <div class="card-top">
+
+            <span class="card-number">
+                01 / 02
+            </span>
+
+        </div>
+
+
+        <div class="profile-section">
+
+            <div class="photo-wrapper">
+
+                <img
+                    class="photo"
+                    src="1786047035471.png"
+                    alt="Photo de Modson Tande"
+                >
+
+            </div>
+
+
+            <h1 class="name">
+                Modson Tande
+            </h1>
+
+
+            <div class="job">
+                Développeur Backend & 
+                Systèmes embarqués 
+            </div>
+
+
+            <p class="bio">
+                Passionné par les systèmes embarqués, l'électronique,
+                le développement backend et la création de solutions
+                technologiques innovantes.
+            </p>
+
+        </div>
+
+
+        <div class="contact-section">
+
+            <div class="phone">
+                +228 93 94 60 43
+            </div>
+
+
+            <div class="actions">
+
+                <!-- APPEL -->
+
+                <a
+                    href="tel:+22893946043"
+                    class="action call"
+                >
+                    📞 Appeler
+                </a>
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://wa.me/22873180221"
+                    target="_blank"
+                    rel="noopener"
+                    class="action whatsapp"
+                >
+                    💬 WhatsApp
+                </a>
+
+
+                <!-- LINKEDIN -->
+
+                <a
+                    href="https://linkedin.com/in/modson-tande-4842871b2"
+                    target="_blank"
+                    rel="noopener"
+                    class="action linkedin"
+                >
+                    in LinkedIn
+                </a>
+
+
+                <!-- SAVE -->
+
+                <button
+                    class="action save-contact"
+                    onclick="saveContact(
+                        'Modson Tande',
+                        '+22893946043',
+                        '+22873180221',
+                        'linkedin.com/in/modson-tande-4842871b2'
+                    )"
+                >
+                    📇 Enregistrer le contact
+                </button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- SEPARATOR -->
+
+    <div class="separator">
+        Deuxième contact
+    </div>
+
+
+
+    <!-- =====================================================
+         KOFFI
+    ====================================================== -->
+
+    <article class="business-card">
+
+        <div class="card-top">
+
+            <span class="card-number">
+                02 / 02
+            </span>
+
+        </div>
+
+
+        <div class="profile-section">
+
+            <div class="photo-wrapper">
+
+                <img
+                    class="photo"
+                    src="1777055931566.png"
+                    alt="Photo de Guinwogbegno Koffi"
+                >
+
+            </div>
+
+
+            <h2 class="name">
+                Guinwogbegno Koffi
+            </h2>
+
+
+            <div class="job">
+                Développeur Mobile & Web
+            </div>
+
+
+            <p class="bio">
+                Développeur passionné par la création d'applications
+                mobiles et de solutions web modernes, performantes
+                et intuitives.
+            </p>
+
+        </div>
+
+
+        <div class="contact-section">
+
+            <div class="phone">
+                +228 70 22 97 96
+            </div>
+
+
+            <div class="actions">
+
+                <!-- APPEL -->
+
+                <a
+                    href="tel:+22870229796"
+                    class="action call"
+                >
+                    📞 Appeler
+                </a>
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://wa.me/22896827451"
+                    target="_blank"
+                    rel="noopener"
+                    class="action whatsapp"
+                >
+                    💬 WhatsApp
+                </a>
+
+
+                <!-- LINKEDIN -->
+
+                <a
+                    href="https://www.linkedin.com/in/koffi-didier-guinwogbegno/"
+                    target="_blank"
+                    rel="noopener"
+                    class="action linkedin"
+                >
+                    in LinkedIn
+                </a>
+
+
+                <!-- SAVE -->
+
+                <button
+                    class="action save-contact"
+                    onclick="saveContact(
+                        'Guinwogbegno Koffi',
+                        '+22870229796',
+                        '+22896827451',
+                        'linkedin.com/in/koffi-didier-guinwogbegno/'
+                    )"
+                >
+                    📇 Enregistrer le contact
+                </button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        Carte de visite numérique
+
+        <br>
+
+        © 2026 — Tous droits réservés.
+
+    </footer>
+
+
+</div>
+
+
+
+<script>
+
+    function saveContact(
+        name,
+        phone,
+        whatsapp,
+        linkedin
+    ) {
+
+        const vcard = [
+            "BEGIN:VCARD",
+            "VERSION:3.0",
+            `FN:${name}`,
+            `TEL;TYPE=CELL:${phone}`,
+            `TEL;TYPE=WHATSAPP:${whatsapp}`,
+            `URL:https://${linkedin}`,
+            "END:VCARD"
+        ].join("\r\n");
+
+
+        const blob = new Blob(
+            [vcard],
+            {
+                type: "text/vcard;charset=utf-8"
+            }
+        );
+
+
+        const url =
+            URL.createObjectURL(blob);
+
+
+        const link =
+            document.createElement("a");
+
+
+        link.href = url;
+
+
+        link.download =
+            name
+                .replace(/\s+/g, "_")
+                .toLowerCase() +
+            ".vcf";
+
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        document.body.removeChild(link);
+
+
+        URL.revokeObjectURL(url);
+
+    }
+
+</script>
+
+</body>
+</html>
