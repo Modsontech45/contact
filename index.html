@@ -290,14 +290,24 @@
                 0 5px 15px rgba(0,0,0,0.08);
         }
 
-        .action.call:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+        .action.whatsapp {
+            border-color: var(--whatsapp);
+            color: #159447;
+            animation: whatsapp-pulse 2s ease-in-out infinite;
         }
 
         .action.whatsapp:hover {
             border-color: var(--whatsapp);
             color: #159447;
+        }
+
+        @keyframes whatsapp-pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
         }
 
         .action.linkedin:hover {
@@ -472,22 +482,7 @@
 
         <div class="contact-section">
 
-            <div class="phone">
-                +228 93 94 60 43
-            </div>
-
-
             <div class="actions">
-
-                <!-- APPEL -->
-
-                <a
-                    href="tel:+22893946043"
-                    class="action call"
-                >
-                    📞 Appeler
-                </a>
-
 
                 <!-- WHATSAPP -->
 
@@ -592,22 +587,7 @@
 
         <div class="contact-section">
 
-            <div class="phone">
-                +228 70 22 97 96
-            </div>
-
-
             <div class="actions">
-
-                <!-- APPEL -->
-
-                <a
-                    href="tel:+22870229796"
-                    class="action call"
-                >
-                    📞 Appeler
-                </a>
-
 
                 <!-- WHATSAPP -->
 
